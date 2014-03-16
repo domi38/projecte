@@ -1,0 +1,70 @@
+﻿@using Projecte.Data.Entities
+
+@model Projecte.Data.Entities.Player
+
+@{
+    ViewBag.Title = "Registre";
+}
+
+<h2>Registre</h2>
+
+@{
+    //Javascript models inclusion
+
+    JS.AddModel(new
+    {
+        CreatePlayer = Url.Action("CreatePlayer", "Player"),    
+        GetGender = Url.Action("GetGender", "Player")
+
+    }, "URLS");
+
+}
+
+@JS.IncludeSelf(Model, true)
+
+@*@using (Html.BeginForm())
+    {
+    @Html.ValidationSummary(true)
+}*@
+<div ng-controller="RegistreCtrl">
+    <input type="text" ng-model="model.Name" />
+    <select ng-model="model.Gender">
+        <option value="0">Male</option>
+        <option value="1">Female</option>
+    </select>
+    <input type="text" ng-model="model.Pass1" />
+    <input type="text" ng-model="model.Pass2" />
+    <button type="button" class="btn" ng-click="CreatePlayer()">Registrar</button>
+
+    {{model}}
+</div>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+
+
+    <fieldset>
+        <legend>Player</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Gender)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.Gender, new SelectList(Enum.GetValues(typeof(Gender))))
+            @Html.ValidationMessageFor(model => model.Gender)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}

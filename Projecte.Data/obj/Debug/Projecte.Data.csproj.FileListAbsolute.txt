@@ -1,0 +1,11 @@
+C:\Users\alex\documents\visual studio 2013\Projects\Projecte\Projecte.Data\bin\Debug\Projecte.Data.dll
+C:\Users\alex\documents\visual studio 2013\Projects\Projecte\Projecte.Data\bin\Debug\Projecte.Data.pdb
+C:\Users\alex\documents\visual studio 2013\Projects\Projecte\Projecte.Data\bin\Debug\MongoDB.Bson.dll
+C:\Users\alex\documents\visual studio 2013\Projects\Projecte\Projecte.Data\bin\Debug\MongoDB.Driver.dll
+C:\Users\alex\documents\visual studio 2013\Projects\Projecte\Projecte.Data\bin\Debug\MongoDB.Bson.pdb
+C:\Users\alex\documents\visual studio 2013\Projects\Projecte\Projecte.Data\bin\Debug\MongoDB.Bson.xml
+C:\Users\alex\documents\visual studio 2013\Projects\Projecte\Projecte.Data\bin\Debug\MongoDB.Driver.pdb
+C:\Users\alex\documents\visual studio 2013\Projects\Projecte\Projecte.Data\bin\Debug\MongoDB.Driver.xml
+C:\Users\alex\documents\visual studio 2013\Projects\Projecte\Projecte.Data\obj\Debug\Projecte.Data.dll
+C:\Users\alex\documents\visual studio 2013\Projects\Projecte\Projecte.Data\obj\Debug\Projecte.Data.pdb
+C:\Users\alex\documents\visual studio 2013\Projects\Projecte\Projecte.Data\obj\Debug\Projecte.Data.csprojResolveAssemblyReference.cache
