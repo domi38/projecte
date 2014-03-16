@@ -14,7 +14,7 @@
     JS.AddModel(new
     {
         CreatePlayer = Url.Action("CreatePlayer", "Player"),    
-        GetGender = Url.Action("GetGender", "Player")
+        //GetGender = Url.Action("GetGender", "Player")
 
     }, "URLS");
 
@@ -26,45 +26,50 @@
     {
     @Html.ValidationSummary(true)
 }*@
-<div ng-controller="RegistreCtrl">
-    <input type="text" ng-model="model.Name" />
-    <select ng-model="model.Gender">
-        <option value="0">Male</option>
-        <option value="1">Female</option>
-    </select>
-    <input type="text" ng-model="model.Pass1" />
-    <input type="text" ng-model="model.Pass2" />
-    <button type="button" class="btn" ng-click="CreatePlayer()">Registrar</button>
 
+<div ng-controller="RegistreCtrl">
+    
+    <form class="form-horizontal">
+        <div class="control-group">
+            <label class="control-label">Nom</label>
+            <div class="controls">
+                <input type="text" ng-model="model.Name" placeholder="Nom"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Email</label>
+            <div class="controls">
+                <input type="text" ng-model="email" placeholder="Email">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Password</label>
+            <div class="controls">
+                <input type="password" ng-model="Pass1" placeholder="Password">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Repeteix el password</label>
+            <div class="controls">
+                <input type="password" ng-model="Pass2" placeholder="Password">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Sexe</label>
+            <div class="controls">
+                <select ng-model="model.Gender">
+                    <option value="1">Home</option>
+                    <option value="0">Dona</option>
+                </select>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">     
+                <button type="button" class="btn" ng-click="CreatePlayer()">Registrar</button>
+            </div>
+        </div>
+        
+    </form>
+    
     {{model}}
 </div>
-@using (Html.BeginForm())
-{
-    @Html.ValidationSummary(true)
-
-
-
-    <fieldset>
-        <legend>Player</legend>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Name)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Name)
-            @Html.ValidationMessageFor(model => model.Name)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Gender)
-        </div>
-        <div class="editor-field">
-            @Html.DropDownListFor(model => model.Gender, new SelectList(Enum.GetValues(typeof(Gender))))
-            @Html.ValidationMessageFor(model => model.Gender)
-        </div>
-
-        <p>
-            <input type="submit" value="Create" />
-        </p>
-    </fieldset>
-}

@@ -18,10 +18,14 @@ namespace Projecte.Data.Entities
         
         public string Name { get; set; }
 
+        public string Password { get; set; }
+
+        public string Email { get; set; }
+
         [BsonRepresentation(BsonType.String)]
         public Gender Gender { get; set; }
 
-        public string Password { get; set; }
+        
 
         public List<Score> Scores { get; set; }
     }
@@ -31,10 +35,14 @@ namespace Projecte.Data.Entities
     {
         public string Name { get; set; }
 
+        public string Password { get; set; }
+
+        public string Email { get; set; }
+
         [BsonRepresentation(BsonType.String)]
         public Gender Gender { get; set; }
 
-        public string Password { get; set; }
+        
 
         public List<Score> Scores { get; set; }
     }

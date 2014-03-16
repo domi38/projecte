@@ -25,6 +25,10 @@ namespace Projecte.Controllers
             playerService.AddScore(playerId, score);
             return RedirectToAction("Details", new {id=playerId});
         }
+        public ActionResult Reversi()
+        {
+            return View(new Player());
+        }
         public ActionResult Registre()
         {
             return View(new Player());
@@ -43,6 +47,7 @@ namespace Projecte.Controllers
                     playerDTO.Name = player.Name;
                     playerDTO.Gender = player.Gender;
                     playerDTO.Password = player.Password;
+                    playerDTO.Email = player.Email;
 
                     //Creem playerService k crearà el nou player
                     var playerService = new PlayerService();
