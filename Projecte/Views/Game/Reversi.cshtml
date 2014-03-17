@@ -1,0 +1,39 @@
+﻿@using Projecte.Data.Entities
+
+@model Projecte.Data.Entities.Player
+
+@{
+    ViewBag.Title = "Reversi";
+}
+@JS.IncludeSelf(Model, true)
+<h2>Reversi</h2>
+{{model}}
+<div ng-controller="ReversiCtrl">
+    <div class="container-fluid">
+        <div class="row-fluid" style="margin-top:60px;margin-left:5px">
+            <div class="span12">
+                <div class="row-fluid">
+                    <div class="span4" style="min-width:485px;">
+                        <table class="rev-board" id="gradient-g">
+                            <tbody>
+                                <tr ng-repeat="row in othello">
+                                    <td ng-class="{quadrat:true,topLine:$parent.$index != 0, leftLine:$index != 0}"
+                                        ng-repeat="cell in row track by $index"
+                                        ng-click="clickSquare($parent.$index, $index)">
+                                        <img ng-src="{{m=othello[$parent.$index][$index];(m=='X'?'/Content/themes/base/images/black_circle.png':(m=='O'?'/Content/themes/base/images/white-circle.png':'/Content/themes/base/images/1x1.png'))}}" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="span2" style="margin-top:10px;min-width:72px;">
+                        <h4>Torn:</h4>
+                        <button class="btn ng-hide" ng-show="negre" style="margin-top:10px;background-image:none;background-color:grey"><img src="~/Content/themes/base/images/black_circle.png" style="width:40px;height:40px;margin-left:5px;" /></button>
+                        <button class="btn ng-hide" ng-show="blanc" style="margin-top:10px;background-image:none;background-color:grey"><img src="~/Content/themes/base/images/white-circle.png" style="width:40px;height:40px;margin-left:5px;" /></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input type="button" ng-click="resetBoard()" value="Reset" />
+    </div>
+</div>
